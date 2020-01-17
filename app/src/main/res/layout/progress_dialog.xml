@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/search_loading_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent"
+    android:fitsSystemWindows="true">
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/imageViewAppLogo"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="@dimen/margin_24_dp"
+        android:src="@drawable/loodos" />
+
+    <com.hakanaksoy.mvvmkotlin.utility.custom.MVVMTextView
+        android:id="@+id/textViewAppName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageViewAppLogo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/margin_24_dp"
+        android:text="@string/app_name"
+        android:textColor="@android:color/white"
+        android:textSize="32sp" />
+
+</RelativeLayout>
