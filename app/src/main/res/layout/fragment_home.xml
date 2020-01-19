@@ -85,7 +85,7 @@
 
 
                 <com.hakanaksoy.mvvmkotlin.utility.custom.MVVMRecyclerView
-                    android:id="@+id/recyclerViewBestPodcasts"
+                    android:id="@+id/rv_senior_personel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/textViewTagLine"
@@ -98,7 +98,7 @@
                     android:id="@+id/textViewTagLine2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/recyclerViewBestPodcasts"
+                    android:layout_below="@id/rv_senior_personel"
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="12dp"
                     android:lines="2"
@@ -108,7 +108,7 @@
                     android:textSize="14sp" />
 
                 <com.hakanaksoy.mvvmkotlin.utility.custom.MVVMRecyclerView
-                    android:id="@+id/recyclerViewBestPodcastsJR"
+                    android:id="@+id/rv_junior_personel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/textViewTagLine2"

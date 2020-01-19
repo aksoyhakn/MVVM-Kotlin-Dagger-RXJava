@@ -58,7 +58,7 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>(HomeViewMo
         viewModel.personelLiveData.observe(
                 this@HomeFragment,
                 Observer<Resource<Personel>> {
-                    (mBinding.recyclerViewBestPodcastsJR.adapter as? JrPersonelAdapter)?.submitList(it.data?.jrpersonel)
+                    (mBinding.rvJuniorPersonel.adapter as? JrPersonelAdapter)?.submitList(it.data?.jrpersonel)
                 }
         )
     }
@@ -68,8 +68,8 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>(HomeViewMo
             toast("" + item.name, 100)
         }
 
-        mBinding.recyclerViewBestPodcastsJR.adapter = adapter
-        mBinding.recyclerViewBestPodcastsJR.layoutManager =
+        mBinding.rvJuniorPersonel.adapter = adapter
+        mBinding.rvJuniorPersonel.layoutManager =
                 GridLayoutManager(context, 1, GridLayoutManager.HORIZONTAL, false)
     }
 
@@ -84,8 +84,8 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>(HomeViewMo
             toast("" + item.name, 100)
         }
 
-        mBinding.recyclerViewBestPodcasts.adapter = adapter
-        mBinding.recyclerViewBestPodcasts.layoutManager =
+        mBinding.rvSeniorPersonel.adapter = adapter
+        mBinding.rvSeniorPersonel.layoutManager =
                 GridLayoutManager(context, 2, GridLayoutManager.HORIZONTAL, false)
     }
 
@@ -98,7 +98,7 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>(HomeViewMo
         viewModel.personelLiveData.observe(
                 this@HomeFragment,
                 Observer<Resource<Personel>> {
-                    (mBinding.recyclerViewBestPodcasts.adapter as? SrPersonelAdapter)?.submitList(it.data?.srpersonel)
+                    (mBinding.rvSeniorPersonel.adapter as? SrPersonelAdapter)?.submitList(it.data?.srpersonel)
                 }
         )
     }
