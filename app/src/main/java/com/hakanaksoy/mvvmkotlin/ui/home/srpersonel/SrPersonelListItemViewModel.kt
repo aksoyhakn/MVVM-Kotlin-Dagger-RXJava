@@ -1,4 +1,4 @@
-package com.hakanaksoy.mvvmkotlin.ui.home.sr_personel
+package com.hakanaksoy.mvvmkotlin.ui.home.srpersonel
 
 import androidx.databinding.ObservableField
 import com.hakanaksoy.mvvmkotlin.base.BaseViewModel

@@ -1,7 +1,5 @@
 package com.hakanaksoy.mvvmkotlin.ui.home
 
-import android.content.res.Resources
-import android.util.Log
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
 import com.hakanaksoy.mvvmkotlin.R
@@ -9,8 +7,8 @@ import com.hakanaksoy.mvvmkotlin.base.BaseFragment
 import com.hakanaksoy.mvvmkotlin.base.Resource
 import com.hakanaksoy.mvvmkotlin.databinding.FragmentHomeBinding
 import com.hakanaksoy.mvvmkotlin.service.response.Personel
-import com.hakanaksoy.mvvmkotlin.ui.home.jr_personel.JrPersonelAdapter
-import com.hakanaksoy.mvvmkotlin.ui.home.sr_personel.SrPersonelAdapter
+import com.hakanaksoy.mvvmkotlin.ui.home.jrpersonel.JrPersonelAdapter
+import com.hakanaksoy.mvvmkotlin.ui.home.srpersonel.SrPersonelAdapter
 import com.hakanaksoy.mvvmkotlin.utility.extensions.toast
 
 

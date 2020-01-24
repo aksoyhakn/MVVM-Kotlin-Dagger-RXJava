@@ -6,7 +6,7 @@
 
         <variable
             name="viewModel"
-            type="com.hakanaksoy.mvvmkotlin.ui.home.jr_personel.JrPersonelListItemViewModel" />
+            type="com.hakanaksoy.mvvmkotlin.ui.home.jrpersonel.JrPersonelListItemViewModel" />
     </data>
 
     <RelativeLayout

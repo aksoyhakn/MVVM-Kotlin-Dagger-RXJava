@@ -1,14 +1,13 @@
 package com.hakanaksoy.mvvmkotlin.service.response
 
 
+import android.os.Parcelable
+import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class Personel(
-
-        @field:SerializedName("srpersonel")
-        val srpersonel: List<SrPersonel?>? = null,
-
-        @field:SerializedName("jrpersonel")
-        val jrpersonel: List<JrPersonel?>? = null
-
-)
+    @SerializedName("srpersonel") @Expose var srpersonel: List<SrPersonel?>? = null,
+    @SerializedName("jrpersonel") @Expose var jrpersonel: List<JrPersonel?>? = null
+) : Parcelable

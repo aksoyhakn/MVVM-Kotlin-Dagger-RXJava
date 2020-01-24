@@ -1,4 +1,4 @@
-package com.hakanaksoy.mvvmkotlin.ui.home.jr_personel
+package com.hakanaksoy.mvvmkotlin.ui.home.jrpersonel
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

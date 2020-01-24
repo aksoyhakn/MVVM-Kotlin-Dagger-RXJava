@@ -1,4 +1,4 @@
-package com.hakanaksoy.mvvmkotlin.ui.home.sr_personel
+package com.hakanaksoy.mvvmkotlin.ui.home.srpersonel
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
