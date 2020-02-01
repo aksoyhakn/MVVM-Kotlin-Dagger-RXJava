@@ -1,6 +1,6 @@
 package com.hakanaksoy.mvvmkotlin.service
 
-import com.hakanaksoy.mvvmkotlin.base.Constants
+import com.hakanaksoy.mvvmkotlin.ui.base.Constants
 import com.orhanobut.logger.Logger
 import javax.inject.Inject
 import javax.inject.Singleton

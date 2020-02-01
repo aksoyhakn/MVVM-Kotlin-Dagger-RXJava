@@ -1,4 +1,4 @@
-package com.hakanaksoy.mvvmkotlin.base
+package com.hakanaksoy.mvvmkotlin.ui.base
 
 import androidx.annotation.NonNull
 

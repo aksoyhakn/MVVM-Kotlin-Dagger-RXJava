@@ -1,4 +1,4 @@
-package com.hakanaksoy.mvvmkotlin.base
+package com.hakanaksoy.mvvmkotlin.ui.base
 
 import android.text.Html
 import android.view.View

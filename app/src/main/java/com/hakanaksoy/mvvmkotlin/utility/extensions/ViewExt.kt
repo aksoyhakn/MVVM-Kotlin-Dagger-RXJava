@@ -15,7 +15,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import com.google.android.material.textfield.TextInputLayout
 
-fun ViewGroup.inflate(@LayoutRes resourceId: Int) =
+fun <T> ViewGroup.inflate(@LayoutRes resourceId: Int, b: Boolean) =
     LayoutInflater.from(context).inflate(
         resourceId,
         this,

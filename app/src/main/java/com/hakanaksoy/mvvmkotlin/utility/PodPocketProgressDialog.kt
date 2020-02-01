@@ -6,7 +6,7 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.view.LayoutInflater
 import com.hakanaksoy.mvvmkotlin.R
-import com.hakanaksoy.mvvmkotlin.base.Constants
+import com.hakanaksoy.mvvmkotlin.ui.base.Constants
 import com.mikhaellopez.rxanimation.RxAnimation
 import com.mikhaellopez.rxanimation.rotation
 import io.reactivex.disposables.CompositeDisposable

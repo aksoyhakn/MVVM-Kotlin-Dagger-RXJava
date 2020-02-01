@@ -3,13 +3,12 @@ package com.hakanaksoy.mvvmkotlin.ui.dashboard
 import android.graphics.Rect
 import android.os.Bundle
 import android.view.MenuItem
-import androidx.navigation.Navigation.findNavController
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
 import com.hakanaksoy.mvvmkotlin.R
-import com.hakanaksoy.mvvmkotlin.base.BaseActivity
+import com.hakanaksoy.mvvmkotlin.ui.base.BaseActivity
 import com.hakanaksoy.mvvmkotlin.databinding.ActivityDashboardBinding
 import com.hakanaksoy.mvvmkotlin.utility.extensions.hide
 import com.hakanaksoy.mvvmkotlin.utility.extensions.show
@@ -21,9 +20,6 @@ import timber.log.Timber
 class DashboardActivity : BaseActivity<DashboardViewModel, ActivityDashboardBinding>(DashboardViewModel::class.java) {
     var isKeyboardShowing = false
 
-    override fun initViewModel(viewModel: DashboardViewModel) {
-        binding.viewModel = viewModel
-    }
 
     override fun getLayoutRes(): Int = R.layout.activity_dashboard
 

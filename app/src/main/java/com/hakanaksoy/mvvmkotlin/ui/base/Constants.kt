@@ -1,9 +1,11 @@
-package com.hakanaksoy.mvvmkotlin.base
+package com.hakanaksoy.mvvmkotlin.ui.base
 
 object Constants {
 
     object NetworkService {
-        const val BASE_URL = "http://demo8676226.mockable.io/"
+        //const val BASE_URL = "http://demo8676226.mockable.io/"
+        const val BASE_URL = "https://api.coingecko.com/api/v3/coins/"
+
         const val API_KEY_HEADER_NAME = "API-KEY"
         const val API_KEY_VALUE = "111111"
     }

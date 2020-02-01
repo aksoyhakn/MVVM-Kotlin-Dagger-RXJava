@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.hakanaksoy.mvvmkotlin.di.key.ViewModelKey
 import com.hakanaksoy.mvvmkotlin.di.scope.ViewModelFactory
+import com.hakanaksoy.mvvmkotlin.ui.coin.CoinViewModel
 import com.hakanaksoy.mvvmkotlin.ui.dashboard.DashboardViewModel
 import com.hakanaksoy.mvvmkotlin.ui.home.HomeViewModel
 import com.hakanaksoy.mvvmkotlin.ui.splash.SplashActivityViewModel
@@ -34,6 +35,11 @@ abstract class ViewModelModule {
     @Binds
     @ViewModelKey(HomeViewModel::class)
     abstract fun provideHomeViewModel(homeViewModel: HomeViewModel): ViewModel
+
+    @IntoMap
+    @Binds
+    @ViewModelKey(CoinViewModel::class)
+    abstract fun provideCoinViewModel(homeViewModel: CoinViewModel): ViewModel
 
 
 

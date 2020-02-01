@@ -16,3 +16,8 @@ inline fun <T : Any> LiveData<T>.observeWith(
         }
     )
 }
+fun <T> LiveData<T>.observeNonNull(owner: LifecycleOwner, observer: (t: T) -> Unit) {
+    this.observe(owner, Observer {
+        it?.let(observer)
+    })
+}

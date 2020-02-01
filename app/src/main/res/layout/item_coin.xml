@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="adapter"
+            type="com.hakanaksoy.mvvmkotlin.ui.home.CoinAdapter" />
+
+        <variable
+            name="viewState"
+            type="com.hakanaksoy.mvvmkotlin.ui.home.CoinItemViewState" />
+
+    </data>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:minHeight="200dp"
+        android:onClick="@{(v) -> adapter.itemClickListener.onClick(viewState)}">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:layout_weight="2"
+                android:scaleType="centerCrop"
+                app:imageUrl="@{viewState.imageUrl}" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom"
+                android:layout_weight="4"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextAppearance.MaterialComponents.Body1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:textColor="@android:color/holo_purple"
+                    android:text="@{viewState.name}"
+                    android:textStyle="bold"
+                    tools:text="@string/app_name" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextAppearance.MaterialComponents.Caption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:text="@{viewState.lastUpdated}"
+                    android:textColor="@android:color/darker_gray"
+                    android:textStyle="bold"
+                    tools:text="@string/app_name" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

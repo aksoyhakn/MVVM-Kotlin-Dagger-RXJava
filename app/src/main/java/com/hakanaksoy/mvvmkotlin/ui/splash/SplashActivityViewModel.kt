@@ -1,7 +1,7 @@
 package com.hakanaksoy.mvvmkotlin.ui.splash
 
 import androidx.databinding.ObservableField
-import com.hakanaksoy.mvvmkotlin.base.BaseViewModel
+import com.hakanaksoy.mvvmkotlin.ui.base.BaseViewModel
 import com.hakanaksoy.mvvmkotlin.service.APIHelper
 import javax.inject.Inject
 import org.jetbrains.anko.doAsync

@@ -6,7 +6,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.DiffUtil
 import com.hakanaksoy.mvvmkotlin.R
-import com.hakanaksoy.mvvmkotlin.base.BaseAdapter
+import com.hakanaksoy.mvvmkotlin.ui.base.BaseAdapter
 import com.hakanaksoy.mvvmkotlin.databinding.ItemJrPersonelBinding
 import com.hakanaksoy.mvvmkotlin.service.response.JrPersonel
 

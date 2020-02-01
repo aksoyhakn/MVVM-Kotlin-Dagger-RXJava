@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+
+        <variable
+            name="viewState"
+            type="com.hakanaksoy.mvvmkotlin.ui.home.CoinViewState" />
+
+        <variable
+            name="helpClick"
+            type="com.hakanaksoy.mvvmkotlin.ui.home.CoinAdapter.ItemClickListener" />
+    </data>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:fitsSystemWindows="true">
+
+            <RelativeLayout
+                android:id="@+id/rootView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/ic_app_bg"
+                android:descendantFocusability="blocksDescendants"
+                android:fitsSystemWindows="true"
+                android:focusable="true"
+                tools:context=".ui.home.HomeFragment">
+
+
+
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:id="@+id/imageViewAppLogoSmall"
+                    android:layout_width="@dimen/margin_64_dp"
+                    android:layout_height="@dimen/margin_64_dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="37dp"
+                    app:civ_border_width="2dp"
+                    android:src="@drawable/loodos" />
+
+
+                <com.hakanaksoy.mvvmkotlin.utility.custom.MVVMTextView
+                    android:id="@+id/textViewAppName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@id/imageViewAppLogoSmall"
+                    android:layout_alignBottom="@id/imageViewAppLogoSmall"
+                    android:layout_marginStart="20dp"
+                    android:layout_toEndOf="@id/imageViewAppLogoSmall"
+                    android:gravity="center"
+                    android:textSize="32dp"
+                    android:text="Coin"
+                    android:textColor="@color/white" />
+
+
+
+
+                <com.hakanaksoy.mvvmkotlin.utility.custom.MVVMLightTextView
+                    android:id="@+id/textViewTagLine2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/textViewAppName"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="12dp"
+                    android:lines="2"
+                    android:textAllCaps="true"
+                    android:text="Coin"
+                    android:textColor="@color/colorHomeText"
+                    android:textSize="14sp" />
+
+                <com.hakanaksoy.mvvmkotlin.utility.custom.MVVMRecyclerView
+                    android:id="@+id/rv_coin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/textViewTagLine2"
+                    android:layout_marginStart="@dimen/margin_8_dp"
+                    android:layout_marginTop="@dimen/margin_8_dp"
+                    app:helpItemClick="@{helpClick}"
+                    app:helpMenuList="@{viewState.data}"
+                    android:layout_marginEnd="@dimen/margin_8_dp"
+                    android:clipToPadding="false" />
+
+
+            </RelativeLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</layout>

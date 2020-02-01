@@ -1,4 +1,4 @@
-package com.hakanaksoy.mvvmkotlin.base
+package com.hakanaksoy.mvvmkotlin.ui.base
 
 import android.app.Dialog
 import android.content.IntentFilter
@@ -49,21 +49,15 @@ abstract class BaseActivity<VM : BaseViewModel, DB : ViewDataBinding>(private va
         ViewModelProviders.of(this, viewModelProviderFactory).get(mViewModelClass)
     }
 
-    /**
-     * If you want to inject Dependency Injection
-     * on your activity, you can override this.
-     */
     open fun onInject() {}
 
     override fun onCreate(savedInstanceState: Bundle?) {
         AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
-        initViewModel(viewModel)
         initDialog()
         onInject()
         initFirebase()
         initToast()
-        getUser()
 
         registerReceiver(connectivityReceiver, IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION))
     }
@@ -82,14 +76,7 @@ abstract class BaseActivity<VM : BaseViewModel, DB : ViewDataBinding>(private va
         unregisterReceiver(connectivityReceiver)
     }
 
-    /**
-     *
-     *  You need override this method.
-     *  And you need to set viewModel to binding: binding.viewModel = viewModel
-     *
-     */
 
-    abstract fun initViewModel(viewModel: VM)
 
     private fun showNetworkMessage(isConnected: Boolean) {
         if (!isConnected) {
@@ -149,7 +136,4 @@ abstract class BaseActivity<VM : BaseViewModel, DB : ViewDataBinding>(private va
         }
     }
 
-    fun getUser() {
-
-    }
 }

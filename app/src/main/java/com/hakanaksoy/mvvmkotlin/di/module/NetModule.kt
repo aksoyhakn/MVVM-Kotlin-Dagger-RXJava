@@ -6,7 +6,7 @@ import com.facebook.stetho.okhttp3.StethoInterceptor
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import com.hakanaksoy.mvvmkotlin.base.Constants
+import com.hakanaksoy.mvvmkotlin.ui.base.Constants
 import com.hakanaksoy.mvvmkotlin.service.APIHelper
 import com.hakanaksoy.mvvmkotlin.service.LoggingInterceptor
 import dagger.Module

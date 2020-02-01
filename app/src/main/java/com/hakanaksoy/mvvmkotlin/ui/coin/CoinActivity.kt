@@ -1,25 +1,29 @@
-package com.hakanaksoy.mvvmkotlin.ui.home
+package com.hakanaksoy.mvvmkotlin.ui.coin
 
+import android.os.Bundle
 import android.util.Log
 import androidx.lifecycle.Observer
 import com.hakanaksoy.mvvmkotlin.R
-import com.hakanaksoy.mvvmkotlin.ui.base.BaseFragment
+import com.hakanaksoy.mvvmkotlin.databinding.ActivityDashboardBinding
 import com.hakanaksoy.mvvmkotlin.databinding.FragmentCoinBinding
+import com.hakanaksoy.mvvmkotlin.ui.base.BaseActivity
+import com.hakanaksoy.mvvmkotlin.ui.dashboard.DashboardViewModel
+import com.hakanaksoy.mvvmkotlin.ui.home.CoinAdapter
+import com.hakanaksoy.mvvmkotlin.ui.home.CoinItemViewState
 import com.hakanaksoy.mvvmkotlin.utility.extensions.notNull
 import com.hakanaksoy.mvvmkotlin.utility.extensions.observeNonNull
 
-
-class HomeFragment : BaseFragment<HomeViewModel, FragmentCoinBinding>(HomeViewModel::class.java) {
-
-    override fun initViewModel() {
-    }
+class CoinActivity :
+    BaseActivity<CoinViewModel, FragmentCoinBinding>(CoinViewModel::class.java) {
 
     override fun getLayoutRes(): Int = R.layout.fragment_coin
 
-    override fun init() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
         initCoin()
 
-        mBinding.swipeRefreshLayout.setOnRefreshListener {
+        binding.swipeRefreshLayout.setOnRefreshListener {
             refreshData()
         }
 
@@ -27,7 +31,7 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentCoinBinding>(HomeViewMo
             viewModel.progressLiveData.removeObservers(this)
 
         viewModel.progressLiveData.observe(
-            this@HomeFragment,
+            this,
             Observer<Boolean> {
                 if (it)
                     showProgress()
@@ -35,6 +39,7 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentCoinBinding>(HomeViewMo
                     hideProgress()
             }
         )
+
     }
 
     val itemClickListener = object : CoinAdapter.ItemClickListener {
@@ -46,13 +51,13 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentCoinBinding>(HomeViewMo
     }
 
     private fun initCoin() {
-        Log.d("home_hakan","initCoin")
+        Log.d("home_hakan", "initCoin")
         viewModel.getCoin()
         viewModel.getCoinLiveData().observeNonNull(this) { viewstate ->
             viewstate.data.notNull {
-                Log.d("home_hakan",viewstate.data?.get(1).toString())
-                mBinding.viewState = viewstate
-                mBinding.helpClick = itemClickListener
+                Log.d("home_hakan", viewstate.data?.get(1).toString())
+                binding.viewState = viewstate
+                binding.helpClick = itemClickListener
             }
 
         }
@@ -61,8 +66,6 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentCoinBinding>(HomeViewMo
 
     private fun refreshData() {
 
-        mBinding.swipeRefreshLayout.isRefreshing = false
+        binding.swipeRefreshLayout.isRefreshing = false
     }
-
-
 }

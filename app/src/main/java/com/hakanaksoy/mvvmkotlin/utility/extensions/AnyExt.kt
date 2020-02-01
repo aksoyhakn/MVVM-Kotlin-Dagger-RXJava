@@ -13,3 +13,14 @@ fun Any.logW(message: String) = Log.w(this::class.java.simpleName, message)
 fun Any.logI(message: String) = Log.i(this::class.java.simpleName, message)
 
 fun Any.emptyString() = ""
+
+
+inline fun Any?.isNotNull(): Boolean {
+    return (this != null)
+}
+
+inline fun <R> R?.notNull(f: (it: R) -> Unit) {
+    if (this != null) {
+        f(this)
+    }
+}

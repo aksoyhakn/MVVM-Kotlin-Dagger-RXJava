@@ -4,8 +4,8 @@ import android.content.Intent
 import android.graphics.Rect
 import android.os.Bundle
 import com.hakanaksoy.mvvmkotlin.R
-import com.hakanaksoy.mvvmkotlin.base.BaseActivity
-import com.hakanaksoy.mvvmkotlin.base.Constants
+import com.hakanaksoy.mvvmkotlin.ui.base.BaseActivity
+import com.hakanaksoy.mvvmkotlin.ui.base.Constants
 import com.hakanaksoy.mvvmkotlin.databinding.ActivitySplashBinding
 import com.hakanaksoy.mvvmkotlin.ui.dashboard.DashboardActivity
 import com.hakanaksoy.mvvmkotlin.utility.extensions.dpToPx
@@ -18,12 +18,8 @@ class SplashActivity :
     BaseActivity<SplashActivityViewModel, ActivitySplashBinding>(SplashActivityViewModel::class.java) {
 
     private var listenerFlag: Boolean? = true
-    override fun initViewModel(viewModel: SplashActivityViewModel) {
-        binding.viewModel = viewModel
-    }
 
     override fun getLayoutRes() = R.layout.activity_splash
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

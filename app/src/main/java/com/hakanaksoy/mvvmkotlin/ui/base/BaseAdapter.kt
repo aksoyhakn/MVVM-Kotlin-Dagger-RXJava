@@ -1,4 +1,4 @@
-package com.hakanaksoy.mvvmkotlin.base
+package com.hakanaksoy.mvvmkotlin.ui.base
 
 import android.view.ViewGroup
 import androidx.databinding.ViewDataBinding

@@ -1,4 +1,4 @@
-package com.hakanaksoy.mvvmkotlin.base
+package com.hakanaksoy.mvvmkotlin.ui.base
 
 import androidx.lifecycle.ViewModel
 import com.uber.autodispose.lifecycle.CorrespondingEventsFunction

@@ -1,6 +1,7 @@
 package com.hakanaksoy.mvvmkotlin.di.module
 
 import com.furkanaskin.app.personal.di.scope.ActivityScope
+import com.hakanaksoy.mvvmkotlin.ui.coin.CoinActivity
 import com.hakanaksoy.mvvmkotlin.ui.dashboard.DashboardActivity
 import com.hakanaksoy.mvvmkotlin.ui.splash.SplashActivity
 import dagger.Module
@@ -16,6 +17,10 @@ abstract class ActivityModule {
     @ActivityScope
     @ContributesAndroidInjector
     internal abstract fun dasboardActivity(): DashboardActivity
+
+    @ActivityScope
+    @ContributesAndroidInjector
+    internal abstract fun coinActivity(): CoinActivity
 
 
 }
